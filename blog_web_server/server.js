@@ -25,6 +25,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'BlogSpace API is running 🚀' });
 });
 
+// ── Root Route ────────────────────────────────────────────────────────────────
+app.get('/', (req, res) => {
+  res.send('BlogSpace API is running perfectly! 🚀');
+});
+
 // ── 404 Handler ───────────────────────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).json({ message: `Route ${req.originalUrl} not found` });
